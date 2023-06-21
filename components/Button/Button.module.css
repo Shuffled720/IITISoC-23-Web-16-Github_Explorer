@@ -4,7 +4,7 @@
     padding: 1rem 2rem;
     border: 1px solid var(--icons-color);
     border-radius: 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--shadow-light-color);
     cursor: pointer;
     transition:  all .2s ease-in;
