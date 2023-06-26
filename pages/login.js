@@ -9,6 +9,7 @@ const handlesignout = (e)  => {
 export default function Home() {
   const { data: session, status } = useSession();
   const [githubUserData, setGithubUserData] = useState()
+  const [repoinfo, setRepoinfo]= useState([])
 
   useEffect(() => {
     if (session) {
@@ -30,24 +31,28 @@ export default function Home() {
       console.log('User Info:', userData);
       setGithubUserData(userData)
      
-     
-     
-     
-     
-     
-     const repoResponse = await fetch(
-        `https://api.github.com/user/${userId}/repos?per_page=5`
-      );
-      const repoData = await repoResponse.json();
-      console.log('User Repositories:', repoData);
+     const fetchRepo = ()=>{
+        fetch( `https://api.github.com/user/${userId}/repos?` )
+        .then(response=>{
+            return response.json()
+        })
+        .then(data =>{
+            setRepoinfo(data)
+        })
+     }
+        fetchRepo()
 
-      if (repoData.length > 0) {
-        const commitResponse = await fetch(
-          `https://api.github.com/repos/${repoData[0].full_name}/commits`
-        );
-        const commitData = await commitResponse.json();
-        console.log('Commit History:', commitData);
-      }
+
+
+
+
+    //   if (repoData.length > 0) {
+    //     const commitResponse = await fetch(
+    //       `https://api.github.com/repos/${repoData[0].full_name}/commits`
+    //     );
+    //     const commitData = await commitResponse.json();
+    //     console.log('Commit History:', commitData);
+    //   }
     } catch (error) {
       console.error('Error loading data:', error);
     }
@@ -69,6 +74,15 @@ export default function Home() {
           <img src={session.user.image} alt="Profile" />
             {githubUserData?.login}
             {githubUserData?.bio}
+        <div>
+            {repoinfo.length>0 &&(
+                <ul>
+                    {repoinfo.map(repo=>(
+                        <li key={repo.id}>{repo.name}</li>
+                    ))}
+                </ul>
+            )}
+        </div>
 
         </>
       )}
