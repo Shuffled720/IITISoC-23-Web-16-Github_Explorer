@@ -1,16 +1,41 @@
 import { useState } from "react"
-
+import Style from '../styles/search.module.css'
 export default function search(){
 
 const[searchdata,setSearchdata]=useState([])
 const[repos,setRepos]=useState([])
+const [commitinfo, setCommitinfo] = useState({})
+const [githubUserData, setGithubUserData] = useState({})
+
+const handleUsersubmit = (e)=>{
+    fetch(`https://api.github.com/users/${e.target.value}`)
+    .then(response=>{
+        return response.json()
+    })
+    .then(data =>{
+        setGithubUserData({[e.target.value]: data})
+    })
+}
+
+
+const handleReposubmit = async(e)=>{
+        const commitResponse = await fetch(
+            `https://api.github.com/repos/${e.target.value}/commits` )
+            .then(response=>{
+              return response.json()
+          })
+          .then(data =>{
+              setCommitinfo({[e.target.value]: data})
+          })
+}
+
 
 const handleSubmit = async (e)=>{
     e.preventDefault()
     const sdata = {
         search: e.target.search.value
       }
-    // console.log(sdata.search)
+
     const fetchSearch = ()=>{
         fetch(`https://api.github.com/search/users?q=${sdata.search}&per_page=20`)
         .then(response=>{
@@ -19,9 +44,10 @@ const handleSubmit = async (e)=>{
         .then(data =>{
             setSearchdata(data.items)
         })
-        // console.log(searchdata)
+       
     }
     fetchSearch()
+  
 }
 
 const handleSubmitrepo = async (e)=>{
@@ -29,16 +55,16 @@ const handleSubmitrepo = async (e)=>{
     const rdata = {
         searchrepo: e.target.searchrepo.value
       }
-    //   console.log(rdata)
+    
       const fetchrepoSearch = ()=>{
-        fetch(`https://api.github.com/search/repositories?q=${rdata.searchrepo}&sort=stargazers_count&per_page=20`)
+        fetch(`https://api.github.com/search/repositories?q=${rdata.searchrepo}&per_page=20`)
         .then(response=>{
          return response.json()
         })
         .then(data =>{
             setRepos(data.items)
         })
-        console.log(repos)
+       
     }
     fetchrepoSearch()
     }
@@ -47,6 +73,7 @@ const handleSubmitrepo = async (e)=>{
 
     return(
         <>
+        <div className={Style.search}>
         <form onSubmit={handleSubmit}>
             <label htmlFor="search">user name</label>
             <input type="text" id="search" name="search" required />
@@ -56,7 +83,20 @@ const handleSubmitrepo = async (e)=>{
         {searchdata.length>0 &&(
             <ul>
                 {searchdata.map(searchd=>(
-                    <li key={searchd.id}>{searchd.login}</li>
+                    <>
+                    
+                    <li key={searchd.id}>
+
+                  
+                    <button type="submit" onClick={handleUsersubmit} value={searchd.login}>{searchd.login}</button>
+                    </li>
+
+                    {!!githubUserData[searchd.login]?.followers && `Followers:${githubUserData[searchd.login]?.followers}  ,`}
+                    {!!githubUserData[searchd.login]?.following && ` Following:${githubUserData[searchd.login]?.following}  ,`}
+                    {!!githubUserData[searchd.login]?.public_repos && ` public repos:${githubUserData[searchd.login]?.public_repos}  `}
+
+                    </>
+                    
                 ))}
             </ul>
         )}
@@ -71,11 +111,37 @@ const handleSubmitrepo = async (e)=>{
         {repos.length>0 &&(
             <ul>
                 {repos.map(repo=>(
-                    <li key={repo.id}>{repo.name} <br /> fullname:  {repo.full_name}</li>
+                    <>
+                    <a className={Style.repo_name} href={repo.html_url} target="blank">{repo.full_name}</a>
+                    {/* <li key={repo.id}>{repo.name} <br /> fullname:  {repo.full_name}</li> */}
+                    {/* <li >{repo.id}</li> */}
+                    <li>stars: {repo.stargazers_count}</li>
+                    <li>Language: {repo.language}</li>
+                    <li>Forks: {repo.forks_count}</li>
+                    {/* <a href={repo.html_url} target="blank">link</a> */}
+                    <button type="submit" onClick={handleReposubmit} value={repo.full_name}>Repo details</button>
+                    <ul>
+                        {commitinfo[repo.full_name] && commitinfo[repo.full_name].slice(0,5).map(ele => {
+                        
+                            
+                           return ( 
+                           <>
+                           <li><b>Commited by: </b>{ele.commit.author.name}</li>
+                           <li> <b>Commit message:</b> {ele.commit.message}</li>
+                           <li> <b>Commit date:</b> {ele.commit.author.date.split("T")[0]}</li>
+                           <li> <b>Commit time:</b> {ele.commit.author.date.split("T")[1].split("Z")[0]} GMT</li>
+                           <br />
+                           </>
+                           )
+                        })}
+                        </ul>
+                    </>
                 ))}
             </ul>
         )}
     </div>
+        </div>
+        
         </>
         
     )

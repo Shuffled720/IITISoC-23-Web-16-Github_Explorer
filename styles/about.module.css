@@ -1,0 +1,105 @@
+.circle{
+    border-radius: 36.402rem;
+    
+    background: radial-gradient(76.43% 79.50% at 50.00% 50.00%, rgba(174, 227, 245, 0.66) 0%, rgba(151, 229, 255, 0.00) 98.30%);
+    filter: blur(3.125rem);
+    width: 30rem;
+    height: 30rem;
+    transform: rotate(0.486deg);
+    flex-shrink: 1;
+    }
+    
+    
+    .icon {
+        position:relative ;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        display:flex;
+    }
+    
+    .blackcat{
+        z-index: 0;
+        filter: none;
+        position:absolute;
+        top:6.5rem;
+        left:8%;
+        height:21.528rem;
+        width:70%;
+        flex-shrink:1;
+    
+    }
+    .box{
+        color: #E5F5FB;
+        border: 3.97px solid #A089E0;
+        border-radius: 22.25px;
+    
+    font-family: Outfit;
+    font-weight: lighter;
+    padding:0.625rem;
+      
+        
+    }
+    .box:hover{
+        background: linear-gradient(#0B2447 70%,#A089E0 );
+        opacity: 66%;
+    }
+    .aboutbox{
+        grid-row-start: 3;
+    }
+    .container{
+        display:grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows:384px ;
+    
+    }
+    .underline{
+        text-decoration-line: underline;
+        text-decoration-color: #E5F5FB;
+        font-size: 2.4555rem;
+    font-family: Outfit;
+    font-weight: 600;
+    color: #E5F5FB;
+    }
+    .righttext{
+        grid-column-start: 7;
+        grid-column-end: 12;
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+    }
+    .creator{
+        grid-column-start: 5;
+    }
+    .creatinfo{
+        left: -4%;
+        grid-column-end: 6;
+        position:relative;
+    }
+    .us{
+        display:flex;
+        flex-direction: column;
+        gap:3em;
+        position: relative;
+        top:6vh;
+        grid-column-start: 2;
+        grid-column-end: 7;
+    }
+    .ourphotos{
+        display:flex;
+        flex-direction:row;
+        top:20vh;
+        height:25vh;
+        position: relative;
+        grid-column-end: 11;
+        gap:3em;
+        
+    }
+    .image{
+        height:20vh;
+        width:9em;
+    }
+    .image:hover{
+        filter: drop-shadow(0 0 0.75rem #A089E0);
+    }
+    
+    

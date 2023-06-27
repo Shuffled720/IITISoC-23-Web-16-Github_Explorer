@@ -79,14 +79,22 @@
   position: relative;
   padding: 4rem 0;
 }
-
 .center::before {
+  background: radial-gradient(#AEE3F5,#97E5FF);
+  opacity:0.66;
+  border-radius: 50%;
+  width: 36.688rem;
+  height: 34.063rem;
+  margin-left: -400px;
+} 
+
+/* .center::before {
   background: var(--secondary-glow);
   border-radius: 50%;
   width: 480px;
   height: 360px;
   margin-left: -400px;
-}
+} */
 
 .center::after {
   background: var(--primary-glow);
