@@ -102,8 +102,8 @@ const handleSubmitrepo = async (e)=>{
                     {!!githubUserData[searchd.login]?.followers && `Followers:${githubUserData[searchd.login]?.followers}  ,`}
                     {!!githubUserData[searchd.login]?.following && ` Following:${githubUserData[searchd.login]?.following}  ,`}
                     {!!githubUserData[searchd.login]?.public_repos && ` public repos:${githubUserData[searchd.login]?.public_repos}  `}
-                    {/* {!!githubUserData[searchd.login]?.url &&( 
-                        <a href={githubUserData[searchd.login]?.url} className={Style.url} >URL</a>)} */}
+                    {!!githubUserData[searchd.login]?.html_url &&( 
+                        <a href={githubUserData[searchd.login]?.html_url} className={Style.url} target="blank" >URL</a>)}
 
                     </>
                     

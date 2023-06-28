@@ -141,13 +141,18 @@ export default function Home() {
             <div className={Style.data}>
               
             {githubUserData?.login}
+            <br />
+            
             {githubUserData?.bio}
+            <br />
             followers:{githubUserData?.followers}
             following:{githubUserData?.following}
             public repos: {githubUserData?.public_repos}
             </div>
             
             <div className={Style.follower}>
+              <br />
+              <br />
                 followers:
                 <ol>
                     {follower[githubUserData?.id]&& follower[githubUserData?.id].map(ele=>{
