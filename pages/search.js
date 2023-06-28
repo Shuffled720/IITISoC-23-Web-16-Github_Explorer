@@ -29,6 +29,10 @@ const handleReposubmit = async(e)=>{
           })
 }
 
+const handleStartClick = (e)  => {
+    e.preventDefault()
+    window.location.href = "/"
+  }
 
 const handleSubmit = async (e)=>{
     e.preventDefault()
@@ -71,9 +75,13 @@ const handleSubmitrepo = async (e)=>{
 
 
 
+
     return(
         <>
         <div className={Style.search}>
+        <div>
+        <button onClick={handleStartClick}>Home</button>
+      </div>
         <form onSubmit={handleSubmit}>
             <label htmlFor="search">user name</label>
             <input type="text" id="search" name="search" required />
@@ -94,6 +102,8 @@ const handleSubmitrepo = async (e)=>{
                     {!!githubUserData[searchd.login]?.followers && `Followers:${githubUserData[searchd.login]?.followers}  ,`}
                     {!!githubUserData[searchd.login]?.following && ` Following:${githubUserData[searchd.login]?.following}  ,`}
                     {!!githubUserData[searchd.login]?.public_repos && ` public repos:${githubUserData[searchd.login]?.public_repos}  `}
+                    {/* {!!githubUserData[searchd.login]?.url &&( 
+                        <a href={githubUserData[searchd.login]?.url} className={Style.url} >URL</a>)} */}
 
                     </>
                     

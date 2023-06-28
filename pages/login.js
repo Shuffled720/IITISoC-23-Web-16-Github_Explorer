@@ -139,6 +139,7 @@ export default function Home() {
          </div>
           <img className={Style.profimg} src={session.user.image} alt="Profile" />
             <div className={Style.data}>
+              
             {githubUserData?.login}
             {githubUserData?.bio}
             followers:{githubUserData?.followers}
@@ -175,7 +176,7 @@ export default function Home() {
                         <>
                         <li key={repo.id}>{repo.name}</li>
                         <button type="submit" onClick={handlesubmit} value={repo.full_name}>search</button>
-                        <ol>
+                        <ul>
                         {commitinfo[repo.full_name] && commitinfo[repo.full_name].map(ele => {
                          
                             
@@ -188,7 +189,7 @@ export default function Home() {
                            </>
                            )
                         })}
-                        </ol>
+                        </ul>
                         </>
                     ))}
                 </ul>
