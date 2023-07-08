@@ -6,6 +6,7 @@ const[searchdata,setSearchdata]=useState([])
 const[repos,setRepos]=useState([])
 const [commitinfo, setCommitinfo] = useState({})
 const [githubUserData, setGithubUserData] = useState({})
+const [sort,setSort]=useState()
 
 const handleUsersubmit = (e)=>{
     fetch(`https://api.github.com/users/${e.target.value}`)
@@ -17,6 +18,18 @@ const handleUsersubmit = (e)=>{
     })
 }
 
+const handleStarSort = ()=>{
+    setSort('stars')
+    alert('sorting by stars')
+}
+const handleClearSort =()=>{
+    setSort()
+    alert('filters removed.')
+}
+const handleforkSort = ()=>{
+    setSort('forks')
+    alert('sorting by forks')
+}
 
 const handleReposubmit = async(e)=>{
         const commitResponse = await fetch(
@@ -57,17 +70,39 @@ const handleSubmit = async (e)=>{
 const handleSubmitrepo = async (e)=>{
     e.preventDefault()
     const rdata = {
-        searchrepo: e.target.searchrepo.value
+        searchrepo: e.target.searchrepo.value,
+        langrepo: e.target.langrepo.value
+        
       }
-    
+     
       const fetchrepoSearch = ()=>{
-        fetch(`https://api.github.com/search/repositories?q=${rdata.searchrepo}&per_page=20`)
-        .then(response=>{
-         return response.json()
-        })
-        .then(data =>{
-            setRepos(data.items)
-        })
+        if(rdata.langrepo){
+            console.log(rdata.langrepo)
+            fetch(`https://api.github.com/search/repositories?q=${rdata.searchrepo}+language:${rdata.langrepo}&sort=${sort}&per_page=20`)
+            .then(response=>{
+             return response.json()
+            })
+            .then(data =>{
+                setRepos(data.items)
+            })
+          }
+          else{
+            console.log(rdata.searchrepo)
+            fetch(`https://api.github.com/search/repositories?q=${rdata.searchrepo}&sort=${sort}&per_page=20`)
+            .then(response=>{
+             return response.json()
+            })
+            .then(data =>{
+                setRepos(data.items)
+            })
+          }
+        // fetch(`https://api.github.com/search/repositories?q=${rdata.searchrepo}&per_page=20`)
+        // .then(response=>{
+        //  return response.json()
+        // })
+        // .then(data =>{
+        //     setRepos(data.items)
+        // })
        
     }
     fetchrepoSearch()
@@ -115,8 +150,12 @@ const handleSubmitrepo = async (e)=>{
     <form onSubmit={handleSubmitrepo}>
             <label htmlFor="searchrepo">repo name</label>
             <input type="text" id="searchrepo" name="searchrepo" required />
+            <input type="text" id="langrepo" name="langrepo" />
             <button type="submit">Submit</button>
         </form>
+       <button type="submit" onClick={handleStarSort}>Sort by stars</button>
+       <button type="submit" onClick={handleforkSort}>Sort by forks</button>
+       <button type="submit" onClick={handleClearSort}>clear filters</button>
         <div>
         {repos.length>0 &&(
             <ul>
