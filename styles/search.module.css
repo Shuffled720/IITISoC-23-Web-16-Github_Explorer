@@ -9,3 +9,22 @@
 .url{
     color: aliceblue;
 }
+.repobox{
+    /* border: 1px solid white; */
+    position: relative;
+    padding-block: initial;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
+}
+.repobox:hover{
+    /* border: 1px solid white; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* width: 100%; */
+}
+.sortcond{
+    font-weight: bolder;
+    font-size: large;
+}
+

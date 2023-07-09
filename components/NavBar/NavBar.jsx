@@ -19,8 +19,8 @@ const NavBar = () => {
           alt = "Cat logo"
           />
           </div>
-          <div className={Style.Github}>Github</div>
-          <div className={Style.exp}> EXplore</div>
+          <div className={Style.Github}>Heaven</div>
+          <div className={Style.exp}> Repo</div>
          
         </div>
         {/* <div className={Style.login}>Login</div> */}

@@ -8,6 +8,8 @@ const [commitinfo, setCommitinfo] = useState({})
 const [githubUserData, setGithubUserData] = useState({})
 const [sort,setSort]=useState()
 
+const None = 'None'
+
 const handleUsersubmit = (e)=>{
     fetch(`https://api.github.com/users/${e.target.value}`)
     .then(response=>{
@@ -20,15 +22,15 @@ const handleUsersubmit = (e)=>{
 
 const handleStarSort = ()=>{
     setSort('stars')
-    alert('sorting by stars')
+
 }
 const handleClearSort =()=>{
     setSort()
-    alert('filters removed.')
+
 }
 const handleforkSort = ()=>{
     setSort('forks')
-    alert('sorting by forks')
+
 }
 
 const handleReposubmit = async(e)=>{
@@ -96,13 +98,7 @@ const handleSubmitrepo = async (e)=>{
                 setRepos(data.items)
             })
           }
-        // fetch(`https://api.github.com/search/repositories?q=${rdata.searchrepo}&per_page=20`)
-        // .then(response=>{
-        //  return response.json()
-        // })
-        // .then(data =>{
-        //     setRepos(data.items)
-        // })
+    
        
     }
     fetchrepoSearch()
@@ -119,7 +115,7 @@ const handleSubmitrepo = async (e)=>{
       </div>
         <form onSubmit={handleSubmit}>
             <label htmlFor="search">user name</label>
-            <input type="text" id="search" name="search" required />
+            <input type="text" id="search" name="search" required placeholder="user name"/>
             <button type="submit">Submit</button>
         </form>
         <div>
@@ -148,10 +144,11 @@ const handleSubmitrepo = async (e)=>{
     </div>
 
     <form onSubmit={handleSubmitrepo}>
-            <label htmlFor="searchrepo">repo name</label>
-            <input type="text" id="searchrepo" name="searchrepo" required />
-            <input type="text" id="langrepo" name="langrepo" />
+            <label htmlFor="searchrepo" >repo name</label>
+            <input type="text" id="searchrepo" name="searchrepo" required placeholder="repository" />
+            <input type="text" id="langrepo" name="langrepo" placeholder="Language" />
             <button type="submit">Submit</button>
+            <li className={Style.sortcond} >sorting condition: {sort?sort:None}</li>
         </form>
        <button type="submit" onClick={handleStarSort}>Sort by stars</button>
        <button type="submit" onClick={handleforkSort}>Sort by forks</button>
@@ -161,6 +158,7 @@ const handleSubmitrepo = async (e)=>{
             <ul>
                 {repos.map(repo=>(
                     <>
+                    <div className={Style.repobox}>
                     <a className={Style.repo_name} href={repo.html_url} target="blank">{repo.full_name}</a>
                     {/* <li key={repo.id}>{repo.name} <br /> fullname:  {repo.full_name}</li> */}
                     {/* <li >{repo.id}</li> */}
@@ -169,6 +167,7 @@ const handleSubmitrepo = async (e)=>{
                     <li>Forks: {repo.forks_count}</li>
                     {/* <a href={repo.html_url} target="blank">link</a> */}
                     <button type="submit" onClick={handleReposubmit} value={repo.full_name}>Repo details</button>
+                    </div>
                     <ul>
                         {commitinfo[repo.full_name] && commitinfo[repo.full_name].slice(0,5).map(ele => {
                         
