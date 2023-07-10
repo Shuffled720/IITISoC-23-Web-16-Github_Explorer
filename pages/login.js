@@ -11,7 +11,8 @@ const handleSearchClick = (e)  => {
 
 const handlesignout = (e)  => {
     e.preventDefault()
-    signOut({ callbackUrl: 'http://localhost:3000' });
+    // signOut({ callbackUrl: 'http://localhost:3000' });
+    signOut()
   }
 
 export default function Home() {
