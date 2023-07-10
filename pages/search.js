@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Style from '../styles/search.module.css'
+
 export default function search(){
 
 const[searchdata,setSearchdata]=useState([])

@@ -3,7 +3,18 @@ import Image from "next/image";
 import Style from './NavBar.module.css';
 import image from "../../public";
 
-
+const handleStartClick = (e)  => {
+  e.preventDefault()
+  window.location.href = "/login"
+}
+const handleSearchClick = (e)  => {
+  e.preventDefault()
+  window.location.href = "/search"
+}
+const handleAboutClick = (e)  => {
+  e.preventDefault()
+  window.location.href = "/about"
+}
 
 
 const NavBar = () => {
@@ -24,7 +35,9 @@ const NavBar = () => {
          
         </div>
         {/* <div className={Style.login}>Login</div> */}
-        <button className={Style.login}>Sign-in</button>
+        <button className={Style.login} onClick={handleStartClick}>Get-started</button>
+        <button className={Style.explore} onClick={handleSearchClick}>explore</button>
+        <button className={Style.about} onClick={handleAboutClick}>about-us</button>
         </div>
     </div>
   )
