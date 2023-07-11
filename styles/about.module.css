@@ -75,15 +75,15 @@
         grid-column-end: 6;
         position:relative;
     }
-    .us{
-        display:flex;
-        flex-direction: column;
-        gap:3em;
-        position: relative;
-        top:6vh;
-        grid-column-start: 2;
-        grid-column-end: 7;
+    
+    .image{
+        height:20vh;
+        width:9em;
     }
+    .image:hover{
+        filter: drop-shadow(0 0 0.75rem #A089E0);
+    }
+    @media (min-width:768px){
     .ourphotos{
         display:flex;
         flex-direction:row;
@@ -94,12 +94,72 @@
         gap:3em;
         
     }
-    .image{
-        height:20vh;
-        width:9em;
+    .us{
+        display:flex;
+        flex-direction: column;
+        gap:3em;
+        position: relative;
+        top:6vh;
+        grid-column-start: 2;
+        grid-column-end: 7;
     }
-    .image:hover{
-        filter: drop-shadow(0 0 0.75rem #A089E0);
     }
     
-    
+    @media (max-width:768px){
+        .icon{
+            display:none;
+        }
+        .righttext{
+            grid-column-start: 2;
+        }
+        
+        .creator{
+            bottom:10vw;
+            position:absolute;
+            right:18.75rem;
+        }
+        .underline{
+            font-size: 7vw;
+        }
+        .Kaushiki{
+            left:10vw;
+            position: absolute;
+            bottom:-65vh;
+            height:20vw;
+        }
+        .image{
+            
+            width:20vw;
+        }
+        
+        .Harsh{
+            right:10vw;
+            position: absolute;
+            bottom:-25vh;
+            height:25vw;
+        }
+        .hinfo{
+            bottom:-50vh;
+            position:absolute;
+            left:10px;
+        }
+        .kinfo{
+            bottom:-85vh;
+            position:absolute;
+            right:10px;
+        }
+    }
+    @media (max-width:400px){
+        .creator{
+            right:50vw;
+            font-size:10vw;
+            bottom:-20vh;
+        }
+    }
+    @media (min-width:538px) and (max-width:768px){
+        .Kaushiki{
+            bottom:-69vh;
+        
+        
+        }
+    }

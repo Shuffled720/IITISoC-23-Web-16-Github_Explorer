@@ -33,16 +33,16 @@ export default function Home() {
             </div>
             <div className={style.us}>
             <u className={`${style.underline} ${style.creator}`}>Creators</u>
-            <div className={`${style.box} ${style.creatinfo}`} >
+            <div className={`${style.box} ${style.creatinfo} ${style.hinfo}`} >
             At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.  
             </div>
-            <div className={`${style.box} ${style.creatinfo}`} >
+            <div className={`${style.box} ${style.creatinfo} ${style.kinfo}`} >
             At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.  
             </div>
             </div>
             <div className={style.ourphotos}>
-              <img className={style.image} src='/Ellipse 2.png' alt="Harsh Sinha" />
-              <img className={style.image} src='/Ellipse 3.png' alt="Kaushiki" />
+              <img className={`${style.image} ${style.Harsh}`}  src='/Ellipse 2.png' alt="Harsh Sinha" />
+              <img className={`${style.image} ${style.Kaushiki}`}  src='/Ellipse 3.png' alt="Kaushiki" />
             </div>
             
             
