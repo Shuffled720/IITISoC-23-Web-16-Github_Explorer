@@ -1,7 +1,10 @@
 .search{
     position: absolute;
-    top:15vh;
+    top: 20%;
+    display: grid;
     color: beige;
+    grid-template-columns: repeat(2,1fr);
+    width: 90rem;
 }
 .repo_name{
     color: rgb(168, 199, 228);
@@ -27,4 +30,27 @@
     font-weight: bolder;
     font-size: large;
 }
-
+.user{
+    padding-bottom: 1rem;
+    font-size: large;
+    font-weight: 550;
+    font-family:cursive;
+}
+.userInput{
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    height: 1.2rem;
+    
+}
+.userSubmit{
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    background: transparent;
+    border: none;
+    color: beige;
+    font-weight: 550;
+}
+.userSubmit:hover{
+    border: 1px solid #E5F5FB;
+    cursor: pointer;
+}

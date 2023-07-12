@@ -1,6 +1,6 @@
 .navbar{
     position: absolute;
-width: 90rem;
+width: 91rem;
 height: 7rem;
 left: 0px;
 top: 0px;
@@ -25,6 +25,9 @@ top: -2vh;
 width: 60%;
 height: 95%;
 top : 9%;
+}
+.logo_img:hover{
+    cursor: pointer;
 }
 .exp{
     position: absolute;

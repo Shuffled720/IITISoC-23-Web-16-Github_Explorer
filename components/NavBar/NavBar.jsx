@@ -15,6 +15,10 @@ const handleAboutClick = (e)  => {
   e.preventDefault()
   window.location.href = "/about"
 }
+const handleHome = (e)=>{
+  e.preventDefault()
+  window.location.href = "/"
+}
 
 
 const NavBar = () => {
@@ -28,6 +32,7 @@ const NavBar = () => {
          className={Style.logo_img}
           src = {image.catlogo}
           alt = "Cat logo"
+          onClick={handleHome}
           />
           </div>
           <div className={Style.Github}>Heaven</div>

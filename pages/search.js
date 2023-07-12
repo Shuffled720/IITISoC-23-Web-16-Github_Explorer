@@ -45,10 +45,6 @@ const handleReposubmit = async(e)=>{
           })
 }
 
-const handleStartClick = (e)  => {
-    e.preventDefault()
-    window.location.href = "/"
-  }
 
 const handleSubmit = async (e)=>{
     e.preventDefault()
@@ -111,13 +107,11 @@ const handleSubmitrepo = async (e)=>{
     return(
         <>
         <div className={Style.search}>
-        <div>
-        <button onClick={handleStartClick}>Home</button>
-      </div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="search">user name</label>
-            <input type="text" id="search" name="search" required placeholder="user name"/>
-            <button type="submit">Submit</button>
+       <div>
+       <form onSubmit={handleSubmit} className={Style.user}>
+            <label htmlFor="search">User Name: </label>
+            <input type="text" id="search" name="search" className={Style.userInput} required placeholder="user name" autoComplete="off"/>
+            <button type="submit" className={Style.userSubmit}>Submit</button>
         </form>
         <div>
         {searchdata.length>0 &&(
@@ -143,11 +137,13 @@ const handleSubmitrepo = async (e)=>{
             </ul>
         )}
     </div>
-
+       </div>
+        
+    <div className={Style.repoSubmit}>
     <form onSubmit={handleSubmitrepo}>
             <label htmlFor="searchrepo" >repo name</label>
-            <input type="text" id="searchrepo" name="searchrepo" required placeholder="repository" />
-            <input type="text" id="langrepo" name="langrepo" placeholder="Language" />
+            <input type="text" id="searchrepo" name="searchrepo" required placeholder="repository" autoComplete="off"/>
+            <input type="text" id="langrepo" name="langrepo" placeholder="python/cpp/c/javaScript" autoComplete="off"/>
             <button type="submit">Submit</button>
             <li className={Style.sortcond} >sorting condition: {sort?sort:None}</li>
         </form>
@@ -189,6 +185,8 @@ const handleSubmitrepo = async (e)=>{
             </ul>
         )}
     </div>
+    </div>
+    
         </div>
         
         </>
