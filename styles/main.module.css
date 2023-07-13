@@ -7,15 +7,15 @@
    z-index: 0;
     left:-14rem;
     flex-shrink: 1;
-    width: 64.125rem;
-height: 65.4375rem;
-
+    width: 64.125vw;
+  height: 65.4375vh;
+  
     }
     
     
     .icon {
         position:relative ;
-        width:50%;
+        width:50vw;
         display: inline-flex;
         
     }
@@ -24,29 +24,30 @@ height: 65.4375rem;
        
         filter: none;
         position:absolute;
-        top:6.5rem;
-        left:5%;
-        width: 40.375rem;
-height: 43rem;
-flex-shrink: 0;
+        top:18vh;
+        left:3%;
+        width: 60.375vw;
+  height: 70vw;
+  flex-shrink: 0;
     }    
     .body{
         background: #0B2447;
-        display: grid;
+        
        
         
         
     }
     .para{
         color: #E5F5FB;
-text-align: right;
-font-size: 5.48088rem;
- font-family: Outfit,sans-serif; 
-text-transform: capitalize;
-width: 45.88275rem;
-height: 14.48519rem;
-position: absolute;
-top:10vh;
+  text-align: right;
+  font-size: 5.48088rem;
+  font-family: Outfit,sans-serif; 
+  text-transform: capitalize;
+  width: 45.88275vh;
+  height: 14.48519vh;
+  position: absolute;
+  top:10vh;
+  margin-right: 10px;
     }
     .whatever{
         display:flex;
@@ -55,23 +56,59 @@ top:10vh;
     }
     .description{
         color: #E5F5FB;
-text-align: right;
-font-size: 1.75rem;
-font-family: Outfit,sans-serif; 
-padding-top: 1.25rem;
-
+  text-align: right;
+  font-size: 1.75rem;
+  font-family: Outfit,sans-serif; 
+  padding-top: 1.25rem;
+  
     }
     .button{
         background-color: #576CBC;
-        height:5rem;
-        width:15rem;
+        
+        padding:10px;
         border-radius: 1.75rem;
         font-size: 2.36481rem;
-font-family: Outfit;
-stroke:#191920;
-stroke-opacity: 0.36;
-stroke-width: 1px;
+  font-family: Outfit;
+  stroke:#191920;
+  stroke-opacity: 0.36;
+  stroke-width: 1px;
     }
     .button:hover{
        background-color: #A089E0;
+    }
+    @media (max-width:700px){
+        .para{
+            text-align: left;
+            left:10vw;
+            font-size: 10vw;
+        }
+        .icon{
+           opacity: 0.3;
+        }
+  
+        .description{
+            font-size: 5vw;
+        }
+        .button{
+            font-size: 7vw;
+        }
+    }
+    @media(max-width:600px){
+        .para{
+            text-align: center;
+            font-size:18vw;
+        }
+        .icon{
+            opacity:0.4;
+            left:13vw;
+        }
+        .button{
+            box-shadow: 3px 3px #E5E0FF ;
+        }
+    }
+    @media (max-width:390px){
+        .para{
+            font-size: 13vw;
+        }
+        
     }
