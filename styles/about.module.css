@@ -136,7 +136,7 @@
             right:10vw;
             position: absolute;
             bottom:-25vh;
-            height:25vw;
+            height:20vw;
         }
         .hinfo{
             bottom:-50vh;
@@ -149,7 +149,7 @@
             right:10px;
         }
     }
-    @media (max-width:400px){
+    @media (max-width:500px){
         .creator{
             right:50vw;
             font-size:10vw;
@@ -162,4 +162,27 @@
         
         
         }
+    }
+    @media (max-width:455px){
+        .kinfo{
+            bottom:-90vh;
+        }
+    }
+    @media (max-width:380px){
+        .kinfo{
+            bottom:-120vh;
+        }
+        .Kaushiki{
+            bottom:-90vh;
+        }
+        .hinfo{
+            bottom: -75vh;
+        }
+        .Harsh{
+            bottom:-45vh;
+        }
+        .creator{
+            bottom:-42vh;
+        }
+
     }
