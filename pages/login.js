@@ -134,9 +134,9 @@ export default function Home() {
 
       
           <p>Welcome, {session.user.name}!</p>
-          <button onClick={handlesignout}>Sign out</button>
-          <div>
-        <button onClick={handleSearchClick}>explore</button>
+          <button onClick={handlesignout} className={Style.signout}>Sign out</button>
+          <div className={Style.explore}>
+        <button onClick={handleSearchClick} >explore</button>
          </div>
           <img className={Style.profimg} src={session.user.image} alt="Profile" />
             <div className={Style.data}>

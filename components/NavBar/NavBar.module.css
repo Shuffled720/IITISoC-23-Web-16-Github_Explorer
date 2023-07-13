@@ -1,7 +1,7 @@
 .navbar{
     position: absolute;
 width: 91rem;
-height: 7rem;
+height: 14vh;
 left: 0px;
 top: 0px;
 
@@ -100,7 +100,7 @@ background-image: linear-gradient(to left, rgb(0 0 0 / 84%), rgb(12 12 12 / 0%))
 }
 .explore{
     position: absolute;
-    left: 76%;
+    left: 77.5%;
     text-align: justify;
     font-family: 'Oswald';
     font-style: normal;

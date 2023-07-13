@@ -16,15 +16,17 @@
     /* display: flex; */
     grid-row-start: 3;
 }
-/* .lgnpg{
-    
-} */
+.lgnpg{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+}
 .login{
     z-index: 11111;
     position: absolute;
     background-color: rgb(54, 53, 76);
     /* top: -50px; */
-    width: 100%;
+    width: 90rem;
     height: 100%;
     color: beige;
     /* align-items: center; */
@@ -33,8 +35,7 @@
     top:14vh;
     /* font-size: larger; */
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(6,1fr);
+   
 
 }
 .loginbtn{
@@ -62,9 +63,14 @@
 }
 .profimg{
     position: absolute;
-    height: 5rem;
+    height: 20rem;
+    width: auto;
     border-radius: 50%;
     padding-top: 1rem;
+    display: inline-grid;
+    grid-row-start: 1;
+    /* width: 50vw; */
+    grid-column-start: 2;
     /* grid-column-start: 5; */
 }
 .data{
@@ -73,20 +79,45 @@
     top: 10rem;
 }
 .follower{
-    position: relative;
-    top: 4rem;
-    left: 7rem;
-    padding-top: 2rem;
+    position: absolute;
+    grid-row-start: 2;
+    /* width: 50vw; */
+    grid-column-start: 3;
+ 
+    display: inline-grid;
+ 
 }
 .following{
-    position: relative;
-    top: 4rem;
-    left: 7rem;
-    padding-top: 2rem;
+    position: absolute;
+    grid-row-start: 3;
+    /* width: 50vw; */
+    grid-column-start: 2;
+ 
+    display: inline-grid;
 
 }
 .repo{
-    position: relative;
-    top: 4rem;
-    width: 50vw;
+    position: absolute;
+    grid-row-start: 4;
+    /* width: 50vw; */
+    grid-column-start: 2;
+ 
+    display: inline-grid;
+ 
+}
+.signout{
+    display: inline-grid;
+    height: fit-content;
+    width: fit-content;
+    grid-column-start: 3;
+    margin-top: 2rem;
+    grid-row-start: 1;
+}
+.explore{
+    display: inline-grid;
+    height: fit-content;
+    width: fit-content;
+    grid-column-start: 3;
+    margin-bottom: 1rem;
+    grid-row-start: 1;
 }

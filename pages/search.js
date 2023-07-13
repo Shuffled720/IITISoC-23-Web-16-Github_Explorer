@@ -139,17 +139,22 @@ const handleSubmitrepo = async (e)=>{
     </div>
        </div>
         
-    <div className={Style.repoSubmit}>
-    <form onSubmit={handleSubmitrepo}>
-            <label htmlFor="searchrepo" >repo name</label>
-            <input type="text" id="searchrepo" name="searchrepo" required placeholder="repository" autoComplete="off"/>
-            <input type="text" id="langrepo" name="langrepo" placeholder="python/cpp/c/javaScript" autoComplete="off"/>
-            <button type="submit">Submit</button>
+    <div >
+    <form onSubmit={handleSubmitrepo} className={Style.repoSubmit}>
+            <label htmlFor="searchrepo" >repo name: </label>
+            <input type="text" id="searchrepo" name="searchrepo" className={Style.searchRepoBox} required placeholder="repository" autoComplete="off"/>
+            <br />
+            <br />
+            <label htmlFor="searchrepo" >language:  </label>
+            <input type="text" id="langrepo" name="langrepo" className={Style.langBox} placeholder="python/cpp/c/javaScript" autoComplete="off"/>
+            <br />
+
+            <button type="submit" className={Style.repoBtn}>Submit</button>
             <li className={Style.sortcond} >sorting condition: {sort?sort:None}</li>
         </form>
-       <button type="submit" onClick={handleStarSort}>Sort by stars</button>
-       <button type="submit" onClick={handleforkSort}>Sort by forks</button>
-       <button type="submit" onClick={handleClearSort}>clear filters</button>
+       <button type="submit" className={Style.sortBtn} onClick={handleStarSort}>Sort by stars</button>
+       <button type="submit" className={Style.sortBtn} onClick={handleforkSort}>Sort by forks</button>
+       <button type="submit" className={Style.sortBtn} onClick={handleClearSort}>clear filters</button>
         <div>
         {repos.length>0 &&(
             <ul>
@@ -163,7 +168,7 @@ const handleSubmitrepo = async (e)=>{
                     <li>Language: {repo.language}</li>
                     <li>Forks: {repo.forks_count}</li>
                     {/* <a href={repo.html_url} target="blank">link</a> */}
-                    <button type="submit" onClick={handleReposubmit} value={repo.full_name}>Repo details</button>
+                    <button type="submit" onClick={handleReposubmit} value={repo.full_name} className={Style.repoDetailBtn}>Repo details</button>
                     </div>
                     <ul>
                         {commitinfo[repo.full_name] && commitinfo[repo.full_name].slice(0,5).map(ele => {
