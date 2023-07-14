@@ -40,9 +40,9 @@ const NavBar = () => {
          
         </div>
         {/* <div className={Style.login}>Login</div> */}
-        <button className={Style.login} onClick={handleStartClick}>Get-started</button>
-        <button className={Style.explore} onClick={handleSearchClick}>explore</button>
-        <button className={Style.about} onClick={handleAboutClick}>about-us</button>
+        <button className={Style.login} onClick={handleStartClick}>Get-Started</button>
+        <button className={Style.explore} onClick={handleSearchClick}>Explore</button>
+        <button className={Style.about} onClick={handleAboutClick}>About-Us</button>
         </div>
     </div>
   )

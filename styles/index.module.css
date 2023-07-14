@@ -12,3 +12,43 @@
 .blackcat{
     width: 90%;
 }
+.para{
+    color: #E5F5FB;
+    display: inline-grid;
+    grid-column-start: 2;
+text-align: right;
+font-size:xxx-large;
+font-family: Outfit,sans-serif; 
+text-transform: capitalize;
+/* width: 45.88275vh; */
+/* height: 14.48519vh; */
+position: absolute;
+line-height: 2em;
+/* top:10vh; */
+margin-right: 4rem;
+}
+.cat{
+    display: inline-grid;
+    grid-column-start: 1;
+}
+@media(max-width:600px){
+    .homePg{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .para{
+        grid-column-start: 1;
+        text-align: center;
+        font-size: 16vw;
+    }
+}
+@media (max-width:390px){
+    .homePg{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .para{
+        grid-column-start: 1;
+        text-align: center;
+        font-size: 19vw;
+    }
+    
+}

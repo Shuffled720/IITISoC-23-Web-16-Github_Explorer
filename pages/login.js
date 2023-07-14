@@ -122,7 +122,7 @@ export default function Home() {
       {!session && (
         <>
         <div className={Style.notsession}>
-          <p>Please sign in to view user information and repositories.</p>
+          <p className={Style.notPara}>Please sign in to view user information and repositories.</p>
           <button className={Style.loginbtn} onClick={() => signIn('github')}>Sign-In</button>
           </div>
         </>
@@ -133,28 +133,26 @@ export default function Home() {
         <div className={Style.lgnpg}>
 
       
-          <p>Welcome, {session.user.name}!</p>
+          <p className={Style.welcome}>Welcome, {session.user.name}!</p>
           <button onClick={handlesignout} className={Style.signout}>Sign out</button>
-          <div className={Style.explore}>
-        <button onClick={handleSearchClick} >explore</button>
-         </div>
+         
           <img className={Style.profimg} src={session.user.image} alt="Profile" />
             <div className={Style.data}>
-              
-            {githubUserData?.login}
-            <br />
-            
+             <h2>
+            {githubUserData?.login} </h2> 
+           
             {githubUserData?.bio}
             <br />
             followers:{githubUserData?.followers}
+            <br />
             following:{githubUserData?.following}
+            <br />
             public repos: {githubUserData?.public_repos}
             </div>
             
             <div className={Style.follower}>
-              <br />
-              <br />
-                followers:
+             <h2>
+                followers:</h2>
                 <ol>
                     {follower[githubUserData?.id]&& follower[githubUserData?.id].map(ele=>{
                        
@@ -165,7 +163,8 @@ export default function Home() {
                 </ol>
             </div>
             <div className={Style.following}>
-                following:
+              <h2>
+                following:</h2>
                 <ol>
                     {following[githubUserData?.id]&& following[githubUserData?.id].map(ele=>{
                        
@@ -176,12 +175,15 @@ export default function Home() {
                 </ol>
             </div>
         <div className={Style.repo}>
+            <h2>Public repositories</h2>
             {repoinfo.length>0 &&(
+              
                 <ul>
                     {repoinfo.map(repo=>(
                         <>
-                        <li key={repo.id}>{repo.name}</li>
-                        <button type="submit" onClick={handlesubmit} value={repo.full_name}>search</button>
+                        <li key={repo.id}>
+                        <button type="submit" onClick={handlesubmit} value={repo.full_name} className={Style.repobtn}>{repo.name}</button>
+                        </li>
                         <ul>
                         {commitinfo[repo.full_name] && commitinfo[repo.full_name].map(ele => {
                          
@@ -192,6 +194,7 @@ export default function Home() {
                            <li> {ele.commit.message}</li>
                            <li> {ele.commit.author.date.split("T")[0]}</li>
                            <li> {ele.commit.author.date.split("T")[1].split("Z")[0]} GMT</li>
+                           <br />
                            </>
                            )
                         })}
