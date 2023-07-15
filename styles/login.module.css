@@ -50,7 +50,7 @@
     position: absolute;
     background-color: rgb(135, 135, 168);
     height: 3.5rem;
-    width: 6rem;
+    /* width: 6rem; */
     border-radius: 2rem;
     left: 20%;
     position: absolute;

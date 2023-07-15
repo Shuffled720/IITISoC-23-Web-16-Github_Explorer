@@ -122,7 +122,7 @@ const handleSubmitrepo = async (e)=>{
                     <li key={searchd.id}>
 
                   
-                    <button type="submit" onClick={handleUsersubmit} value={searchd.login}>{searchd.login}</button>
+                    <button type="submit" onClick={handleUsersubmit} value={searchd.login} className={Style.userbtn}>{searchd.login}</button>
                     </li>
 
                     {!!githubUserData[searchd.login]?.followers && `Followers:${githubUserData[searchd.login]?.followers}  ,`}
@@ -152,9 +152,9 @@ const handleSubmitrepo = async (e)=>{
             <button type="submit" className={Style.repoBtn}>Submit</button>
             <li className={Style.sortcond} >sorting condition: {sort?sort:None}</li>
         </form>
-       <button type="submit" className={Style.sortBtn} onClick={handleStarSort}>Sort by stars</button>
-       <button type="submit" className={Style.sortBtn} onClick={handleforkSort}>Sort by forks</button>
-       <button type="submit" className={Style.sortBtn} onClick={handleClearSort}>clear filters</button>
+       <button type="submit" className={Style.sortBtn} onClick={handleStarSort}>Sort by Stars</button>
+       <button type="submit" className={Style.sortBtn} onClick={handleforkSort}>Sort by Forks</button>
+       <button type="submit" className={Style.sortBtn} onClick={handleClearSort}>Clear Filters</button>
         <div>
         {repos.length>0 &&(
             <ul>
