@@ -17,15 +17,21 @@
     display: inline-grid;
     grid-column-start: 2;
 text-align: right;
-font-size:xxx-large;
+font-size:4rem;
 font-family: Outfit,sans-serif; 
 text-transform: capitalize;
 /* width: 45.88275vh; */
 /* height: 14.48519vh; */
 position: absolute;
-line-height: 2em;
+line-height: 1.5em;
 /* top:10vh; */
 margin-right: 4rem;
+font-weight: 600;
+
+}
+.description{
+    font-size: xxx-large;
+    font-weight: normal;
 }
 .cat{
     display: inline-grid;

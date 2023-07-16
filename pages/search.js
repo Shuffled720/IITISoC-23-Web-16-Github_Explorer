@@ -107,10 +107,10 @@ const handleSubmitrepo = async (e)=>{
     return(
         <>
         <div className={Style.search}>
-       <div>
+       <div className={Style.userSearch}>
        <form onSubmit={handleSubmit} className={Style.user}>
             <label htmlFor="search">User Name: </label>
-            <input type="text" id="search" name="search" className={Style.userInput} required placeholder="user name" autoComplete="off"/>
+            <input type="text" id="search" name="search" className={Style.userInput} required placeholder="User Name" autoComplete="off"/>
             <button type="submit" className={Style.userSubmit}>Submit</button>
         </form>
         <div>
@@ -128,8 +128,9 @@ const handleSubmitrepo = async (e)=>{
                     {!!githubUserData[searchd.login]?.followers && `Followers:${githubUserData[searchd.login]?.followers}  ,`}
                     {!!githubUserData[searchd.login]?.following && ` Following:${githubUserData[searchd.login]?.following}  ,`}
                     {!!githubUserData[searchd.login]?.public_repos && ` public repos:${githubUserData[searchd.login]?.public_repos}  `}
+                    <br />
                     {!!githubUserData[searchd.login]?.html_url &&( 
-                        <a href={githubUserData[searchd.login]?.html_url} className={Style.url} target="blank" >URL</a>)}
+                        <a href={githubUserData[searchd.login]?.html_url} className={Style.url} target="blank" >Link</a>)}
 
                     </>
                     
@@ -139,14 +140,14 @@ const handleSubmitrepo = async (e)=>{
     </div>
        </div>
         
-    <div >
+    <div className={Style.repoSearch}>
     <form onSubmit={handleSubmitrepo} className={Style.repoSubmit}>
             <label htmlFor="searchrepo" >repo name: </label>
-            <input type="text" id="searchrepo" name="searchrepo" className={Style.searchRepoBox} required placeholder="repository" autoComplete="off"/>
+            <input type="text" id="searchrepo" name="searchrepo" className={Style.searchRepoBox} required placeholder="Repository" autoComplete="off"/>
             <br />
             <br />
             <label htmlFor="searchrepo" >language:  </label>
-            <input type="text" id="langrepo" name="langrepo" className={Style.langBox} placeholder="python/cpp/c/javaScript" autoComplete="off"/>
+            <input type="text" id="langrepo" name="langrepo" className={Style.langBox} placeholder="Optional (python/cpp/c/javaScript)" autoComplete="off"/>
             <br />
 
             <button type="submit" className={Style.repoBtn}>Submit</button>

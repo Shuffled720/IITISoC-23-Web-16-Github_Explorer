@@ -88,6 +88,7 @@
     border: none;
     background: linear-gradient(180deg, rgba(11, 36, 71, 0.8) 0%, rgba(160, 137, 224, 0) 100%), linear-gradient(0deg, #A089E0, #A089E0);
     color: beige;
+    padding-left: 10px;
 }
 .searchRepoBox::placeholder{
     color: beige;
@@ -101,6 +102,7 @@
     border: none;
     background: linear-gradient(180deg, rgba(11, 36, 71, 0.8) 0%, rgba(160, 137, 224, 0) 100%), linear-gradient(0deg, #A089E0, #A089E0);
     color: beige;
+    padding-left: 10px;
 }
 .langBox::placeholder{
     color: beige;
@@ -142,6 +144,8 @@
 .repoDetailBtn{
     border-radius: 2rem;
     border: none;
+    height: 2rem;
+    background-color: cyan;
 }
 .repoDetailBtn:hover{
     cursor: pointer;
@@ -151,6 +155,71 @@
     border: none;
     border-radius: 2rem;
     padding: 0.5rem 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.2rem;
     background-color: cyan;
+}
+@media(max-width:600px){
+    .search{
+        display: block;
+    }
+    .userInput{
+        width: 50%;
+        height: 3.5rem;
+        font-size: xx-large;
+    }
+    .user{
+        font-size: xx-large;
+    }
+    .userInput::placeholder{
+        font-size: x-large;
+        font-weight: bold;
+    }
+    .userSubmit{
+        height: 3rem;
+        font-size: xx-large;
+    }
+    .repoSearch{
+        margin-top: 3rem;
+        margin-left: 1rem;
+    }
+    .userSearch{
+        margin-left: 1rem;
+    }
+    .repoSubmit{
+        font-size: xx-large;
+    }
+    .searchRepoBox{
+        width: 50%;
+        height: 3.5rem;
+        font-size: xx-large;
+    }
+    .searchRepoBox::placeholder{
+        font-size: x-large;
+        font-weight: bold;
+    }
+    .langBox{
+        width: 50%;
+        height: 3.5rem;
+        font-size: xx-large;
+    }
+    .langBox::placeholder{
+        font-size: x-large;
+        font-weight: bold;
+    }
+    .repoBtn{
+        height: 3rem;
+        font-size: xx-large;
+        margin-top: 1rem;
+    }
+    .sortcond{
+        height: 3rem;
+        font-size: xx-large;
+        margin-top: 1rem;
+    }
+    .sortBtn{
+        height: 3rem;
+        font-size: xx-large;
+        margin-top: 1rem;
+    }
 }

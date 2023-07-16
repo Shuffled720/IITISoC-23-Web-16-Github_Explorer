@@ -45,6 +45,7 @@
     }
     .aboutbox{
         grid-row-start: 3;
+        margin-top: 1vh;
     }
     .container{
         display:grid;
@@ -83,7 +84,7 @@
     .image:hover{
         filter: drop-shadow(0 0 0.75rem #A089E0);
     }
-    @media (min-width:768px){
+    @media (min-width:769px){
     .ourphotos{
         display:flex;
         flex-direction:row;
@@ -105,7 +106,7 @@
     }
     }
     
-    @media (max-width:768px){
+    @media (max-width:769px){
         .icon{
             display:none;
         }
@@ -124,7 +125,7 @@
         .Kaushiki{
             left:10vw;
             position: absolute;
-            bottom:-65vh;
+            bottom:-70vh;
             height:20vw;
         }
         .image{
@@ -144,9 +145,10 @@
             left:10px;
         }
         .kinfo{
-            bottom:-85vh;
+            bottom:-100vh;
             position:absolute;
             right:10px;
+            left:10px
         }
     }
     @media (max-width:500px){
@@ -156,21 +158,21 @@
             bottom:-20vh;
         }
     }
-    @media (min-width:538px) and (max-width:768px){
+    @media (min-width:538px) and (max-width:769px){
         .Kaushiki{
-            bottom:-69vh;
+            bottom:-72vh;
         
         
         }
     }
     @media (max-width:455px){
         .kinfo{
-            bottom:-90vh;
+            bottom:-110vh;
         }
     }
     @media (max-width:380px){
         .kinfo{
-            bottom:-120vh;
+            bottom:-135vh;
         }
         .Kaushiki{
             bottom:-90vh;

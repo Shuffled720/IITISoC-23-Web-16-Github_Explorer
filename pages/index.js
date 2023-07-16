@@ -11,6 +11,7 @@ const Home = () => {
       </div>
       <div className={Style.para}>
         <p >
+          
         Explore <span style={{color:"#A089E0"}}>GitHub</span><br/>
               Like Never before<br/>
               <span className={Style.description}> Search for repositories that speak your language,<br/>unlock hidden gems, and<br/> connect with a vibrant community of<br/> developers worldwide.<br/></span>
