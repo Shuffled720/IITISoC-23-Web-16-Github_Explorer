@@ -28,19 +28,7 @@ Repo Heaven enables users to explore and find out about GitHub-hosted open-sourc
 This is a Next.js project bootstrapped with create-next-app and is deployed on Vercel - [Repo Heaven](https://repo-heaven.vercel.app/)
 
 
-## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Prerequisites
 - Node.js with npm installed on system
