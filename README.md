@@ -31,7 +31,7 @@ This is a Next.js project bootstrapped with create-next-app and is deployed on V
 
 
 ## Prerequisites
-- Node.js with npm installed on system
+- Node.js with npm installed on  system
 - Modern web browser like Google Chrome, Safari, Edge, etc.
 
 
