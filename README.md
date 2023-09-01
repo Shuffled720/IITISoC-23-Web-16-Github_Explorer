@@ -14,7 +14,7 @@ Repo Heaven enables users to explore and find out about GitHub-hosted open-sourc
 
 ## Specification
 
-- The application is integrated with the GitHub API to fetch repository information, user data, and activity updates.
+-  The application is integrated with the GitHub API to fetch repository information, user data, and activity updates.
 - The application is responsive and accessible across different devices,including desktops, tablets, and mobile devices.
 - It has user authentication
 - Users can view the recent activity in a repository, such as commit history.
